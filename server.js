@@ -11,6 +11,9 @@ const cheerio = require("cheerio");
 const Comment = require("./models/Comment.js");
 const Article = require("./models/Article.js");
 
+// Set Mongoose to leverage built in JS ES6 Promises
+mongoose.Promise = Promise;
+
 // Port
 const port = process.env.PORT || 3000;
 
@@ -39,8 +42,8 @@ db.on("error", error => console.log("Mongoose Error: ", error));
 db.once("open", () => console.log("Mongoose connection successful."));
 
 // Routers
-app.use("/scrape", require("./controllers/scrape.js"));
-app.use("/articles", require("./controllers/articles.js"));
+app.use("/",  require("./controllers/scrape.js"));
+app.use("/", require("./controllers/articles.js"));
 
 // Application listener
-app.listen(port, () => console.log(`Application running on port ${port}`));
+app.listen(port, () => console.log(`Application is running on port ${port}`));
