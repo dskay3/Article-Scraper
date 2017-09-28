@@ -39,7 +39,8 @@ db.on("error", error => console.log("Mongoose Error: ", error));
 db.once("open", () => console.log("Mongoose connection successful."));
 
 // Routers
-const router = require("./controllers/controller.js");
+app.use("/scrape", require("./controllers/scrape.js"));
+app.use("/articles", require("./controllers/articles.js"));
 
 // Application listener
 app.listen(port, () => console.log(`Application running on port ${port}`));
