@@ -37,8 +37,8 @@ router.get("/scrape", (req, res) => {
       entry.save((error, doc) => console.log(error || doc));
     });
 
-    // Tells browser scraping is finished
-    res.send("Scrape complete.");
+    // Console logs completion of scraping
+    console.log("Scraping is complete.")
 
   });
 
