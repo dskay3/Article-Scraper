@@ -39,8 +39,11 @@ router.get("/articles", (req, res) => {
       // Logs error
       if (error) console.log(error);
 
-    // Renders main page once scraping is complete
-    res.render("index");
+      // Stores articles into an object that index can use
+      let articleObj = { articles: doc };
+
+      // Renders main page once scraping is complete
+      res.render("index", articleObj);
     })
 });
 
