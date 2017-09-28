@@ -11,7 +11,7 @@ const Article = require("../models/Article.js");
 const Scrape = require("./scrape.js");
 
 // Get router for all articles in database
-router.get("/articles", (req, res) => {
+router.get("/api/articles", (req, res) => {
   // Grabs every entry in Articles array
   Article.find()
     // Populates all comments associated with articles
@@ -27,8 +27,25 @@ router.get("/articles", (req, res) => {
     })
 });
 
+// Get router to display main page
+router.get("/articles", (req, res) => {
+  // Grabs every entry in Articles array
+  Article.find()
+    // Populates all comments associated with articles
+    .populate("comments")
+
+    // Executes the following
+    .exec((error, doc) => {
+      // Logs error
+      if (error) console.log(error);
+
+    // Renders main page once scraping is complete
+    res.render("index");
+    })
+});
+
 // Get router for specific article in database
-router.get("/articles/:id", (req, res) => {
+router.get("/api/articles/:id", (req, res) => {
   // Query article identified in URL
   Article.findOne({ "_id": req.params.id })
   // Populate all of the comments associated with it
