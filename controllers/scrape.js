@@ -10,7 +10,7 @@ const Comment = require("../models/Comment.js");
 const Article = require("../models/Article.js");
 
 // Index router
-router.get("/", (req, res) => res.redirect("/scrape"));
+router.get("/", (req, res) => res.render("index"));
 
 // Scrape router
 router.get("/scrape", (req, res) => {
