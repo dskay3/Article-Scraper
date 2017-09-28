@@ -40,8 +40,9 @@ router.get("/scrape", (req, res) => {
     // Console logs completion of scraping
     console.log("Scraping is complete.")
 
+    // Renders main page once scraping is complete
+    res.render("index");
   });
-
 });
 
 // Exports Scrape router
