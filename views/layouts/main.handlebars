@@ -34,10 +34,24 @@
     </div>
   </nav>
 
+  {{!-- Header --}}
   <div class="newspaper center">
     <h1 class="center">Article Scraper</h1>
   </div>
 
+  {{!-- Article Information --}}
+  <div class="container">
+    {{{ body }}}
+  </div>
+
+  {{!-- Footer --}}
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="copyright-text">
+        © Articles are scraped from <a href="https://www.theverge.com/tech">www.theverge.com</a>. Author does not claim copyright for this material.
+      </div>
+    </div>
+  </footer>
 
   {{!-- Materialize JS CDN --}}
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

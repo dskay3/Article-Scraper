@@ -36,3 +36,13 @@
     vertical-align: middle;
     margin-top: 0px;
   }
+
+.page-footer,
+.footer-copyright {
+  padding-top: 0px;
+  background-color: gray;
+}
+
+.copyright-text {
+  padding-left: 20px;
+}
