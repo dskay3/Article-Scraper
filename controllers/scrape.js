@@ -44,4 +44,5 @@ router.get("/scrape", (req, res) => {
 
 });
 
+// Exports Scrape router
 module.exports = router;
