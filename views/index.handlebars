@@ -1,6 +1,6 @@
 {{#each articles}}
   {{!-- Each article --}}
-  <div class="col s6">
+  <div class="col s12 m6">
     <div class="card grey darken-1">
       <div class="card-content white-text">
         <span class="strong">Article: </span><span class="card-title">{{ title }}</span>
@@ -19,39 +19,33 @@
     <div class="modal-content">
       <h4>Comment Box</h4>
       <p>Please add a comment.</p>
-        <form id="form-add-{{_id}}" action="article/comment/add/{{_id}}" method="post" style="background-color: white;">
 
-          <!-- Author Name Input -->
-          <div class="row">
-            <div class="input-field col s2"></div>
-            <div class="input-field col s8">
-              <input id="author_name" name="name" type="text" class="validate">
-              <label for="author_name">Name:</label>
-            </div>
+      {{!-- Form --}}
+      <form id="form-add-{{_id}}" action="article/comment/add/{{_id}}" method="post" style="background-color: white;">
+
+        <!-- Author Name Input -->
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="author_name" name="name" type="text" class="validate">
+            <label for="author_name">Name:</label>
           </div>
-          
-          <!-- Comment Input -->
-          <div class="row">
-            <div class="input-field col s2"></div>
-            <div class="input-field col s8">
-              <textarea id="comment_box" name="comment" class="materialize-textarea"></textarea>
-              <label for="comment_box">Comment Body:</label>
-            </div>
+        </div>
+        
+        <!-- Comment Input -->
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="comment_box" name="comment" class="materialize-textarea"></textarea>
+            <label for="comment_box">Comment Body:</label>
           </div>
+        </div>
 
-            <!-- Submit Button -->
-            <div class="row">
-              <div class="input-field col s2"></div>
-              <div class="input-field col s8">
-              <center><input class="btn add-commment-btn" data-id="{{_id}}" type="submit" value="Submit"></center>
-              </div>
-            </div>
-          </form>
-    </div>
-
-    {{!-- Modal footer --}}
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+        <!-- Submit Button -->
+        <div class="row">
+          <div class="input-field col s12">
+          <center><input class="btn add-commment-btn" data-id="{{_id}}" type="submit" value="Submit"></center>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 {{/each}}
