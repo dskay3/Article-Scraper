@@ -22,7 +22,7 @@ const ArticleSchema = new Schema({
   // Scrape time
   retrieved: {
     type: String,
-    default: moment().format('MMMM Do YYYY, h:mm:ss a')
+    default: moment().format('l')
   },
 
   // Article comments
