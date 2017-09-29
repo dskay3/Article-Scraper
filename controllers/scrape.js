@@ -30,11 +30,17 @@ router.get("/scrape", (req, res) => {
       // Adds link for each result object
       result.link = $(this).children("a").attr("href");
 
-      // Creates a new Entry using the Article model
-      const entry = new Article(result);
+      // Only add the entry to the database if is not already there
+      Article.count({ title: result.title}, (err, counts) => {
+        // If the count is 0, then the entry is unique and should be saved
+        if(counts == 0) {
+          // Creates a new Entry using the Article model
+          const entry = new Article(result);
 
-      // Saves result to database
-      entry.save((error, doc) => console.log(error || doc));
+          // Saves result to database
+          entry.save((error, doc) => console.log(error || doc));
+        }
+      });
     });
 
     // Console logs completion of scraping
