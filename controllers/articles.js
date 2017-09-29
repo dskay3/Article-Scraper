@@ -101,7 +101,7 @@ router.post("/article/comment/add/:id", (req, res) => {
         if (error) console.log(error);
 
         // Otherwise
-        else { res.send(doc) };
+        else { res.redirect("/articles") };
       });
     }
   });
