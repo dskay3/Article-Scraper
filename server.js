@@ -32,7 +32,15 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Database configuration with Mongoose
-mongoose.connect("mongodb://localhost/article-scraper");
+if (process.env.NODE_ENV == 'production') {
+  // Heroku Mongoose connection
+  mongoose.connect("mongodb://heroku_3pgndrp3:hajhn21r9cs26cf2bg2oksne6@ds155424.mlab.com:55424/heroku_3pgndrp3");
+}
+else {
+  // localhost Mongoose connection
+  mongoose.connect("mongodb://localhost/article-scraper");
+}
+
 const db = mongoose.connection;
 
 // Display Mongoose errors
