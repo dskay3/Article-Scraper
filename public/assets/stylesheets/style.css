@@ -46,3 +46,25 @@
 .copyright-text {
   padding-left: 20px;
 }
+
+.retrievedDate {
+  float: right;
+  padding-top: 8px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.noArticle {
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0;
+  background-color: lightgrey;
+}
