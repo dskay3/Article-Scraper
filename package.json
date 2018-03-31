@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dskay3/Article-Scraper.git"
+    "url": "git+https://github.com/dskay3/article-scraper.git"
   },
   "keywords": [
     "Scraper"
@@ -17,9 +17,9 @@
   "author": "Daniel Kim",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/dskay3/Article-Scraper/issues"
+    "url": "https://github.com/dskay3/article-scraper/issues"
   },
-  "homepage": "https://github.com/dskay3/Article-Scraper#readme",
+  "homepage": "https://github.com/dskay3/article-scraper#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
